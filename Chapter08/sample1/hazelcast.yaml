@@ -19,6 +19,7 @@ spec:
         image: hazelcast/hazelcast:3.12
         ports:
         - containerPort: 5701
+      restartPolicy: Never
 
 ---
 
