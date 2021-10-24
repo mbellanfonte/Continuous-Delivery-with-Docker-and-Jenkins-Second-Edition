@@ -4,6 +4,6 @@ Feature: Calculator
     When the calculator sums them
     Then I receive 3 as a result
   Scenario: Divide two numbers
-    Given I have two numbers: 6 and 3
+    Given I have a dividend and divisor: 6 and 3
     When the caluclator divides them
     Then I receive 2 as the quotient
