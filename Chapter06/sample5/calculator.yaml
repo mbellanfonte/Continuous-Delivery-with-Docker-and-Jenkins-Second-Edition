@@ -24,8 +24,8 @@ spec:
       containers:
       - name: calculator
         # change images for ex9-1 test 2
-        image: leszko/calculator
-        # image: dlambrig/week8:1.1
+        # image: leszko/calculator
+        image: dlambrig/week8:1.1
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
