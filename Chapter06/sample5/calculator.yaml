@@ -1,0 +1,35 @@
+# From Chapter06/Sample5
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calculator-deployment
+  labels:
+    app: calculator
+spec:
+  # change replica counts for ex9-1 test 1
+  replicas: 4
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 0
+  selector:
+    matchLabels:
+      app: calculator
+  template:
+    metadata:
+      labels:
+        app: calculator
+    spec:
+      containers:
+      - name: calculator
+        # change images for ex9-1 test 2
+        image: leszko/calculator
+        # image: dlambrig/week8:1.1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        readinessProbe:
+          httpGet:
+             path: /sum?a=1&b=2
+             port: 8080
