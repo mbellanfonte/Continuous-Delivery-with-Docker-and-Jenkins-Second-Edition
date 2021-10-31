@@ -7,7 +7,7 @@ metadata:
     app: calculator
 spec:
   # change replica counts for ex9-1 test 1
-  replicas: 4
+  replicas: 2
   strategy:
     type: RollingUpdate
     rollingUpdate:
